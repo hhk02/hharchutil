@@ -5,7 +5,7 @@ Update Arch system and AUR packages
 
 
 Enable daemons or disable like:
-- Enable/Disable WiFi
+- Enable/Disable WiFi (wpa_supplicant)
 - Enable/Disable CUPS
 - Enable/Disable Buetooth
 
