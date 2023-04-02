@@ -3,6 +3,14 @@
 id=$(echo $[($RANDOM % ($[10000 - 32000] + 1)) + 10000] )
 echo "$id"
 
+if [ ! -f /usr/bin/yad ]; then
+    echo "Installing requiered dependencies...."
+    sudo pacman -S yad --noconfirm
+    echo "Done!"
+else
+    echo "The dependencies alredy installed!"
+fi
+
 yad --text="WARNING IF YOU USE PROTON OR WINE THE PERFORMANCE DEPENDS OF THERMAL, OPENGL AND VULKAN DRIVERS, LINUX KERNEL AND THERMAL MANAGEMENT , BACKGORUND PROCESSES MAY CAUSE BUGS. see more info in: https://wiki.winehq.org/PerformanceS" --title="WARNING"
 
 
