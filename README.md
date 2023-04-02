@@ -1,4 +1,11 @@
 # uarchutil
-Universal system utility for Arch
+# What things can do with this?
 
-This is a fork of StormOS and XeroLinux system utility
+Enable daemons or disable like:
+- Enable/Disable WiFi
+- Enable/Disable CUPS
+- Enable/Disable Buetooth
+
+- Install yay
+
+And other things.
