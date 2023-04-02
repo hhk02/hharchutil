@@ -15,7 +15,8 @@ yad --plug="$id" --tabnum=1 --form \
 --field="<b>Install Teamviewer</b>":FBTN "konsole -e 'sudo pacman -S teamviewer --noconfirm'" \
 --field="<b>Launch TeamViewer for remote support</b>":FBTN "konsole -e '/opt/teamviewer/tv_bin/script/teamviewer'" \
 --field="<b>Install yay (aur package manager) </b>":FBTN "konsole -e bash -c 'cd /tmp && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm'" &
---field="<b>Add Chaotic-AUR</b>":FBTN "konsole -e bash -c ''"
+--field="<b>Add Chaotic-AUR</b>":FBTN "konsole -e bash -c 'sudo pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com && sudo pacman-key --lsign-key FBA220DFC880C036 && sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' && echo -e "'[chaotic-aur]\n
+Include = /etc/pacman.d/chaotic-mirrorlist" >> /etc/pacman.conf && sudo pacman -Sy'
 
 
 yad --plug="$id" --tabnum=2 --form \
@@ -32,9 +33,14 @@ yad --plug="$id" --tabnum=2 --form \
 yad --plug="$id" --tabnum=3 --form \
 --text="Daemons" \
 --field="<b>Enable Cups/Printer</b>":fbtn "konsole -e 'systemctl enable --now cups'" \
+--field="<b>Disable Cups/Printer</b>":fbtn "konsole -e 'systemctl disable --now cups'" \
 --field="<b>Cups/Printer Web Interface</b>":fbtn "xdg-open http://127.0.0.1:631" \
---field="<b>Enable TeamViewer Daemon</b>":FBTN "konsole -e ' teamviewer --daemon start'" &
-
+--field="<b>Start TeamViewer Daemon</b>":FBTN "konsole -e 'teamviewer --daemon start'" \
+--field="<b>Stop TeamViewer Daemon</b>":FBTN "konsole -e 'teamviewer --daemon stop'" \
+--field="<b>Enable Bluetooth Daemon</b>":FBTN "konsole -e 'systemctl enable --now bluetooth'" \
+--field="<b>Disable Bluetooth Daemon</b>":FBTN "konsole -e 'systemctl disable --now bluetooth'" \
+--field="<b>Enable Wireless support</b>":FBTN "konsole -e 'systemctl enable --now wpa_supplicant'" \
+--field="<b>Disable Wireless support</b>":FBTN "konsole -e ' systemctl disable --now wpa_supplicant'"  &
 
 yad --notebook --key="$id" --center --tab-pos=top --width=480 --height=175 --tab "<b>(1).Welcome to uarchutil!</b>" --tab="<b>(2).System</b>" --tab="<b>(3). Daemons</b>" \
 --title="Universal Arch Linux Utilities Program v1.0.0" \
