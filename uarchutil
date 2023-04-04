@@ -27,7 +27,7 @@ yad --plug="$id" --tabnum=1 --form \
 
 yad --plug="$id" --tabnum=2 --form \
 --text="Games" \
---field="<b>Install Steam client</b>":fbtn "konsole -e 'sudo pacman -S --noconfirm steam-native-runtime gamemode'" \
+--field="<b>Install Steam Client</b>":fbtn "konsole -e 'sudo pacman -S --noconfirm steam-native-runtime gamemode'" \
 --field="<b>Install Heroic Launcher (a unofficial epic games launcher)</b>":fbtn "konsole -e 'yay -S --noconfirm heroic-games-launcher-bin gamemode'" \
 --field="<b>Install Lutris Launcher (a game manager including for install games with Wine)</b>":fbtn "konsole -e 'sudo pacman -S --noconfirm lutris gamemode'" \
 --field="<b>Install ProtonGE Updater (a Proton Compatibility Layer Updater</b>":fbtn "konsole -e 'yay -S --noconfirm proton-community-updater'" \
@@ -38,9 +38,9 @@ yad --plug="$id" --tabnum=2 --form \
 
 yad --plug="$id" --tabnum=3 --form \
 --text="Daemons" \
---field="<b>Enable Cups/Printer</b>":fbtn "konsole -e 'systemctl enable --now cups'" \
---field="<b>Disable Cups/Printer</b>":fbtn "konsole -e 'systemctl disable --now cups'" \
---field="<b>Cups/Printer Web Interface</b>":fbtn "xdg-open http://127.0.0.1:631" \
+--field="<b>Enable Cups Service</b>":fbtn "konsole -e 'systemctl enable --now cups'" \
+--field="<b>Disable Cups Service</b>":fbtn "konsole -e 'systemctl disable --now cups'" \
+--field="<b>Cups Web Interface</b>":fbtn "xdg-open http://127.0.0.1:631" \
 --field="<b>Start TeamViewer Daemon</b>":FBTN "konsole -e 'teamviewer --daemon start'" \
 --field="<b>Stop TeamViewer Daemon</b>":FBTN "konsole -e 'teamviewer --daemon stop'" \
 --field="<b>Enable Bluetooth Daemon</b>":FBTN "konsole -e 'systemctl enable --now bluetooth'" \
