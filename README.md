@@ -3,7 +3,7 @@
 
 -   Update Arch system and AUR packages
 -   Enable Chaotic AUR repository (testing)
-
+-   Added Distrobox option (testing)
 
 Enable daemons or disable like:
 - Enable/Disable WiFi (wpa_supplicant)
