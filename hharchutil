@@ -49,7 +49,7 @@ yad --plug="$id" --tabnum=3 --form \
 --field="<b>Disable Wireless support</b>":FBTN "konsole -e ' systemctl disable --now wpa_supplicant'"  &
 
 yad --notebook --key="$id" --center --tab-pos=top --width=480 --height=175 --tab "<b>(1)System</b>" --tab="<b>(2)Games</b>" --tab="<b>(3). Daemons</b>" \
---title="Universal Arch Linux Utilities Program v1.0.0" \
+--title="hhk02's Arch Linux Utilites 1.0" \
 --justify=center &
 
 case $? in
