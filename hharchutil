@@ -19,10 +19,10 @@ yad --plug="$id" --tabnum=1 --form \
 --field="<b>Update keyring</b>":FBTN "konsole -e 'sudo pacman -S archlinux-keyring --noconfirm'" \
 --field="<b>Refresh Mirrors</b>":FBTN "konsole -e 'sudo reflector --verbose -l 20 --sort rate --save /etc/pacman.d/mirrorlist'" \
 --field="<b>System Updates</b>":FBTN "konsole  -e 'sudo pacman -Syyu --noconfirm'" \
---field="<b>Aur Updates</b>":FBTN "konsole -e 'yay -Syyu --noconfirm'" \
---field="<b>Install Teamviewer</b>":FBTN "konsole -e 'sudo pacman -S teamviewer --noconfirm'" \
+--field="<b>AUR Updates</b>":FBTN "konsole -e 'yay -Syyu --noconfirm'" \
+--field="<b>Install TeamViewer</b>":FBTN "konsole -e 'sudo pacman -S teamviewer --noconfirm'" \
 --field="<b>Launch TeamViewer for remote support</b>":FBTN "konsole -e '/opt/teamviewer/tv_bin/script/teamviewer'" \
---field="<b>Add Chaotic-AUR Repository</b>":FBTN "konsole -e bash -c sudo pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com && sudo pacman-key --lsign-key FBA220DFC880C036 && pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' && echo -e "[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist" | sudo tee /etc/pacman.conf" \
+--field="<b>Add Chaotic-AUR Repository</b>":FBTN "konsole -e bash -c sudo pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com && sudo pacman-key --lsign-key FBA220DFC880C036 && pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' && echo -e "[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist" | sudo tee /etc/pacman.conf && sudo pacman -Sy" \
 --field="<b>Install yay (aur package manager) </b>":FBTN "konsole -e bash -c 'cd /tmp && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm'" &
 
 
