@@ -22,6 +22,7 @@ yad --plug="$id" --tabnum=1 --form \
 --field="<b>Aur Updates</b>":FBTN "konsole -e 'yay -Syyu --noconfirm'" \
 --field="<b>Install Teamviewer</b>":FBTN "konsole -e 'sudo pacman -S teamviewer --noconfirm'" \
 --field="<b>Launch TeamViewer for remote support</b>":FBTN "konsole -e '/opt/teamviewer/tv_bin/script/teamviewer'" \
+--field="<b>Add Chaotic-AUR Repository</b>":FBTN "konsole -e bash -c sudo pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com && sudo pacman-key --lsign-key FBA220DFC880C036 && pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' && echo -e "[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist" | sudo tee /etc/pacman.conf" \
 --field="<b>Install yay (aur package manager) </b>":FBTN "konsole -e bash -c 'cd /tmp && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm'" &
 
 
@@ -33,7 +34,6 @@ yad --plug="$id" --tabnum=2 --form \
 --field="<b>Install ProtonGE Updater (a Proton Compatibility Layer Updater</b>":fbtn "konsole -e 'yay -S --noconfirm proton-community-updater'" \
 --field="<b>Install MangoHUD</b>":fbtn "konsole -e 'yay -S --noconfirm mangohud goverlay-bin'" \
 --field="<b>Install Bottles (A Wine prefixes manager)</b>":fbtn "konsole -e 'yay -S --noconfirm bottles'" &
-
 
 
 yad --plug="$id" --tabnum=3 --form \
